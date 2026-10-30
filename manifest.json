@@ -1,0 +1,24 @@
+{
+  "id": "./",
+  "name": "ELPrisen.nu",
+  "short_name": "ELPrisen",
+  "description": "Se elprisen i Danmark lige nu, de kommende timer.",
+  "lang": "da",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#27282B",
+  "theme_color": "#201E1E",
+  "categories": ["utilities", "finance"],
+  "icons": [
+    { "src": "icons/72.png", "sizes": "72x72", "type": "image/png", "purpose": "any" },
+    { "src": "icons/128.png", "sizes": "128x128", "type": "image/png", "purpose": "any" },
+    { "src": "icons/144.png", "sizes": "144x144", "type": "image/png", "purpose": "any" },
+    { "src": "icons/152.png", "sizes": "152x152", "type": "image/png", "purpose": "any" },
+    { "src": "icons/192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/256.png", "sizes": "256x256", "type": "image/png", "purpose": "any" },
+    { "src": "icons/512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

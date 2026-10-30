@@ -1,14 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boiler-plate</title>
-    <link rel="shortcut icon" href="assets/img/30x6si.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/site.css">
-    <script src="assets/js/site.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#201E1E">
+  <meta name="description" content="Se elprisen i Danmark lige nu, de kommende timer og op til en uge tilbage.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="ELPrisen">
+  <title>ELPrisen.nu</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icons/32.png">
+  <link rel="apple-touch-icon" href="icons/180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/site.js"></script>
 </head>
-<body>
- boilerplate 
+<body data-page="now">
+  <header>
+    <a class="brand" href="#now">
+      <img src="icons/100.png" alt="ELPrisen.nu logo" width="48" height="48">
+      <span>ELPrisen.nu</span>
+    </a>
+    <nav aria-label="Hovedmenu">
+      <a href="#overview" data-page="overview">Oversigt</a>
+      <a href="#now" data-page="now">Lige nu</a>
+      <a href="#history" data-page="history">Historik</a>
+    </nav>
+    <button id="settings-open" class="icon-btn" aria-label="Indstillinger">
+      <span class="icon icon-gear"></span>
+    </button>
+  </header>
+
+  <main id="app">
+    <section id="now" class="page">
+      <h2>Elprisen lige nu</h2>
+      <div class="ring big">
+        <strong id="now-price">–</strong>
+        <span>PR. KWH</span>
+      </div>
+      <p id="now-time" class="time"></p>
+
+      <div class="minmax desktop-only">
+        <div>
+          <div class="ring small"><strong class="min-price">–</strong><span>PR. KWH</span></div>
+          <p>Laveste pris</p>
+        </div>
+        <div>
+          <div class="ring small"><strong class="max-price">–</strong><span>PR. KWH</span></div>
+          <p>Højeste pris</p>
+        </div>
+      </div>
+
+      <p class="info desktop-only">
+        Alle priser er <b class="vat-note">eksl. moms</b> og afgifter.<br><br>
+        Du vises lige nu priserne for region <b class="region-name">Øst Danmark</b><br><br>
+        <small>Elpriser leveret af <a href="https://www.elprisenligenu.dk">Elprisen lige nu.dk</a></small>
+      </p>
+    </section>
+
+    <section id="overview" class="page">
+      <h2>Oversigt</h2>
+      <div class="minmax mobile-only">
+        <div>
+          <div class="ring small"><strong class="min-price">–</strong><span>PR. KWH</span></div>
+          <p>Laveste pris</p>
+        </div>
+        <div>
+          <div class="ring small"><strong class="max-price">–</strong><span>PR. KWH</span></div>
+          <p>Højeste pris</p>
+        </div>
+      </div>
+      <ul id="overview-list" class="prices"></ul>
+    </section>
+
+    <section id="history" class="page">
+      <h2>Historik</h2>
+      <label class="date">
+        <input type="date" id="history-date" aria-label="Vælg dato">
+        <span class="icon icon-calendar"></span>
+      </label>
+      <p id="history-title" class="small-title"></p>
+      <ul id="history-list" class="prices"></ul>
+    </section>
+
+    <section id="settings" class="page" aria-label="Indstillinger">
+      <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+        <button id="settings-close" class="icon-btn" aria-label="Luk indstillinger">
+          <span class="icon icon-close"></span>
+        </button>
+        <h2 id="settings-title">Indstillinger</h2>
+        <label class="row">Priser inkl. moms <input type="checkbox" class="switch" id="set-vat"></label>
+        <label class="row">Laveste pris alarm <input type="checkbox" class="switch" id="set-alarm"></label>
+        <label class="row">Vælg region
+          <select id="set-region">
+            <option value="DK2">Region Øst</option>
+            <option value="DK1">Region Vest</option>
+          </select>
+        </label>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mobile-only">
+    Priserne er <b class="vat-note">ex. moms</b> og afgifter<br>
+    Du vises lige nu priserne for <b class="region-name">Øst Danmark</b><br>
+    <small>Elpriser leveret af <a href="https://www.elprisenligenu.dk">Elprisen lige nu.dk</a></small>
+  </footer>
 </body>
 </html>
