@@ -1,5 +1,5 @@
 // Skift versionsnummeret, hver gang en af filerne ændres
-const CACHE = 'elprisen-v4';
+const CACHE = 'elprisen-v5';
 
 const FILES = [
   './',
